@@ -1,0 +1,9 @@
+/* src/assets/base.css */
+
+/* Import Figtree font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap');
+
+/* Apply Figtree font to all text */
+body, h1, h2, h3, h4, h5, h6, p, a, button, div {
+  font-family: 'Figtree', sans-serif;
+}
