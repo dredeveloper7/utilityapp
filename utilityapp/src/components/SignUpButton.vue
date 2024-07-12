@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-
+import { useRouter } from 'vue-router';
 const props = defineProps({
   text: {
     type: String,
@@ -17,8 +17,15 @@ const props = defineProps({
   }
 });
 
+
 const signUp = () => {
-  alert('Sign Up Clicked!');
+  navigateToSignUp();
+};
+
+const router = useRouter();
+
+const navigateToSignUp = () => {
+  router.push({ name: 'signup' });
 };
 </script>
 
