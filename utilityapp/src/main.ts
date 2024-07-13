@@ -1,14 +1,23 @@
-import './assets/main.css'
+import './assets/main.css';
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+import App from './App.vue';
+import router from './router';
+import { useAuthStoreWithSetup } from './stores/auth'; // Import the function that sets up the listener
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+const app = createApp(App);
 
-import App from './App.vue'
-import router from './router'
+const pinia = createPinia();
+app.use(pinia);
+app.use(router);
 
-const app = createApp(App)
+const authStore = useAuthStoreWithSetup(); // Use the setup function to initialize the auth store
 
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')
+authStore.setPersistence().then(() => {
+  authStore.checkAuthStatus().then(() => {
+    if (!app._isMounted) {
+      app.mount('#app');
+      app._isMounted = true; // Mark the app as mounted
+    }
+  });
+});

@@ -1,12 +1,27 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HomeView from './views/HomeView.vue'
-</script>
-
 <template>
-  <RouterView />
+  <router-view />
 </template>
 
-<style scoped>
+<script setup>
+import { onMounted } from 'vue';
+import { useAuthStore } from './stores/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
-</style>
+const authStore = useAuthStore();
+
+let auth;
+onMounted(() => {
+  auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log('onAuthStateChanged: ',user)
+      authStore.setUser(user);
+      console.log('User signed in:', user);
+    }
+    else {
+      console.log('User signed in:', 'NO USER');
+      authStore.clearUser();
+    }
+  });
+});
+</script>

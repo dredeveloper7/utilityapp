@@ -4,7 +4,7 @@
       <img src="../assets/uni_student.jpg" alt="Sign Up Image" />
     </div>
     <div class="right-section">
-      <form class="signup-form">
+      <form class="signup-form" @submit.prevent="signUp">
         <h2>Sign Up</h2>
         <div class="form-group">
           <label for="email">Email</label>
@@ -30,11 +30,37 @@
 
 <script setup>
 import { ref } from 'vue';
+import { auth } from '../firebaseConfig';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 const username = ref('');
 const email = ref('');
 const password = ref('');
 const confirmPassword = ref('');
+
+const signUp = async () => {
+  if (password.value !== confirmPassword.value) {
+    alert("Passwords do not match");
+    return;
+  }
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email.value, password.value);
+    console.log("User signed up:", userCredential.user);
+  } catch (error) {
+    console.error("Error signing up:", error);
+  }
+};
+
+const signUpWithGoogle = async () => {
+  const provider = new GoogleAuthProvider();
+  try {
+    const result = await signInWithPopup(auth, provider);
+    console.log("User signed up with Google:", result.user);
+  } catch (error) {
+    console.error("Error signing up with Google:", error);
+  }
+};
+
 </script>
 
 <style scoped>

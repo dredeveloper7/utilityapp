@@ -1,150 +1,166 @@
 <template>
-  <div class="landing-page">
-
+  <div class="login-page">
+    <div class="left-section">
+      <img src="../assets/uni_student.jpg" alt="login Image" />
+    </div>
+    <div class="right-section">
+      <form class="login-form" @submit.prevent="login">
+        <h2>Login</h2>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" v-model="email" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" v-model="password" />
+        <button type="submit" class="login-button">Login</button>
+        </div>
+        <div class="social-login">
+          <button class="google-login">Log In with Google</button>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue';
-import '../assets/base.css'; // Add this line to import base.css
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { useAuthStore } from '../stores/auth';
+import { auth, db } from '../firebaseConfig';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
+const router = useRouter();
+const authStore = useAuthStore();
 
-onMounted(() => {
-  // Implement countdown timer logic here if needed
-});
+const email = ref('');
+const password = ref('');
+
+const login = async () => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email.value, password.value);
+    const user = userCredential.user;
+    authStore.setUser(user); // Update the state with the user
+    router.push({ name: 'dashboard' }); // Ensure this route name is correct
+  } catch (error) {
+    console.error('Error logging in:', error);
+    alert(error.message);
+  }
+};
 </script>
 
 <style scoped>
-
-.GridBulletSection {
+.login-page {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 80%;
-  max-width: 1200px;
-  margin: 0px auto;
-  padding:60px 0px 30px;
+  height: 100vh;
 }
 
-.page-section {
-  width: 80%;
-  max-width: 1200px;
-  margin: 20px auto;
-  padding:20px 0px 30px;
-}
-
-
-body {
-  font-family: 'Figtree', sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #f8f9fa;
-  width: 100%;
-}
-
-.logo {
-  flex-shrink: 0;
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 20px; /* Adjust the gap as needed */
-}
-
-.main-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 80%;
-  max-width: 1200px;
-  margin: 20px auto;
-  padding:60px 0px 30px;
-}
-.text-content {
+.left-section {
   flex: 1;
-  margin-right: 20px;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.main-heading {
-  font-family: 'Figtree', sans-serif;
-  font-size: 60px;
-  font-weight: bold;
-  margin: 20px 0;
+
+.left-section img {
+  max-width: 100%;
+  height: auto;
 }
-.subheading {
-  line-height: 1.5;
-  font-size: 20px;
-  color: rgba(81, 82, 94, 1);
-  font-family: "Figtree", sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  margin: 10px 0;
+
+.right-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
 }
-.cta {
-  margin: 20px 0;
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
-.cta button {
-  background-color: #000;
+
+.login-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #6c63ff;
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
   border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 16px;
   transition: background-color 0.3s;
 }
-.cta button:hover {
-  background-color: #444;
-}
-.hero-image {
-  overflow: clip;
-  position: static;
-  max-width: 100%;
-  margin: 0px 102.172px 0px 102.164px;
-  height: 550px
+
+.login-button:hover {
+  background-color: #a29ee8;
 }
 
-.timer {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 20px 0;
+.social-login {
+  margin-top: 20px;
 }
-.timer div {
-  background-color: #f0f0f0;
+
+.google-login {
+  width: 100%;
   padding: 10px;
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
   border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
-/* Page Headers */
-.centered-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center; /* Center text horizontally */
-  padding: 40px 0px 40px 0px;
+.google-login:hover {
+  background-color: #357ae8;
 }
 
-.centered-heading {
-  color: rgb(0, 0, 0);
-  position: static;
-  font-size: 32px;
-  font-family: Figtree, sans-serif;
-  font-weight: 700;
-  margin: 0px 0px 20px;
+.login-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
 }
 
+.login-link a {
+  color: #4285f4;
+  text-decoration: none;
+}
 
+.login-link a:hover {
+  text-decoration: underline;
+}
 </style>
