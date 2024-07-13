@@ -4,8 +4,8 @@
       <img src="../assets/logo.png" alt="Logo" width="100" />
       <div class="header-right">
         <CountdownComponent />
-        <SignUpButton text="Register for Giveaway" color="#6c63ff" />
-        <SignUpButton text="Login" color="#000" />
+        <BigNavigationButton text="Register for Giveaway" navigateTo="signup" color="#6c63ff" />
+        <BigNavigationButton text="Login" navigateTo="login" color="#000" />
       </div>
     </header>
     <main class="main-content">
@@ -16,7 +16,7 @@
           the best prices and a single platform to manage them all
         </p>
         <div class="cta">
-          <SignUpButton text="Sign Up" color="#6c63ff" />
+          <BigNavigationButton text="Sign Up" color="#6c63ff" />
         </div>
       </div>
       <img src="../assets/Woman on her laptop.png" alt="Hero Image" class="hero-image" />
@@ -36,7 +36,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import CountdownComponent from '../components/CountdownComponent.vue'
-import SignUpButton from '../components/SignUpButton.vue'
+import BigNavigationButton from '../components/BigNavigationButton.vue'
 import GridBulletSection from '../components/LandingPageGridBulletSection.vue'
 import ClientScroller from '../components/ClientScroller.vue'
 import FeaturesComponent from '../components/FeaturesComponent.vue'

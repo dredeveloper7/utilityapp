@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import SignUpButton from '../components/SignUpButton.vue'
+import SignUpButton from './BigNavigationButton.vue'
 </script>
 
 <style scoped>

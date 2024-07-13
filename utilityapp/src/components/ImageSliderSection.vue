@@ -4,7 +4,7 @@
       <img src="../assets/logo.png" alt="Logo" width="100" />
       <div class="header-right">
         <CountdownComponent />
-        <SignUpButton text="Register for GiveAway" color="#000" />
+        <BigNavigationButton text="Register for GiveAway" color="#000" />
       </div>
     </header>
     <main class="main-content">
@@ -15,7 +15,7 @@
           the best prices and a single platform to manage them all
         </p>
         <div class="cta">
-          <SignUpButton text="Sign Up" color="#000" />
+          <BigNavigationButton text="Sign Up" color="#000" />
         </div>
       </div>
       <img src="../assets/Woman on her laptop.png" alt="Hero Image" class="hero-image" />
@@ -26,7 +26,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import CountdownComponent from './CountdownComponent.vue'
-import SignUpButton from './SignUpButton.vue'
+import BigNavigationButton from './BigNavigationButton.vue'
 import '../assets/base.css'; // Add this line to import base.css
 
 const signUp = () => {

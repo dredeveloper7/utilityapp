@@ -46,7 +46,7 @@
 </template>
 
 <script setup>
-import SignUpButton from './SignUpButton.vue';
+import SignUpButton from './BigNavigationButton.vue';
 </script>
 
 <style scoped>
