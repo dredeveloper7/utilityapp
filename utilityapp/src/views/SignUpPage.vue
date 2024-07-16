@@ -20,7 +20,7 @@
         </div>
         <button type="submit" class="signup-button">Sign Up</button>
         <div class="social-login">
-          <button class="google-login">Sign Up with Google</button>
+          <button class="google-login" @click="signUpWithGoogle">Sign Up with Google</button>
         </div>
         <p class="login-link">Already have an account? <a href="/login">Log in</a></p>
       </form>
@@ -32,6 +32,11 @@
 import { ref } from 'vue';
 import { auth } from '../firebaseConfig';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { useRouter } from 'vue-router';
+import { useAuthStore } from '../stores/auth';
+
+const router = useRouter();
+const authStore = useAuthStore();
 
 const username = ref('');
 const email = ref('');
@@ -48,6 +53,7 @@ const signUp = async () => {
     console.log("User signed up:", userCredential.user);
   } catch (error) {
     console.error("Error signing up:", error);
+    alert(error)
   }
 };
 
@@ -56,6 +62,8 @@ const signUpWithGoogle = async () => {
   try {
     const result = await signInWithPopup(auth, provider);
     console.log("User signed up with Google:", result.user);
+    authStore.setUser(result.user); // Update the state with the user
+    router.push({ name: 'dashboard' }); // Ensure this route name is correct
   } catch (error) {
     console.error("Error signing up with Google:", error);
   }
@@ -66,6 +74,7 @@ const signUpWithGoogle = async () => {
 <style scoped>
 .signup-page {
   display: flex;
+  flex-direction: column; /* Change to column for mobile */
   height: 100vh;
 }
 
@@ -75,6 +84,7 @@ const signUpWithGoogle = async () => {
   display: flex;
   justify-content: center;
   align-items: center;
+  order: 2; /* Change order for better mobile view */
 }
 
 .left-section img {
@@ -87,7 +97,8 @@ const signUpWithGoogle = async () => {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 20px; /* Reduce padding for mobile */
+  order: 1; /* Change order for better mobile view */
 }
 
 .signup-form {
@@ -176,5 +187,42 @@ const signUpWithGoogle = async () => {
 
 .login-link a:hover {
   text-decoration: underline;
+}
+
+/* Media Queries for responsiveness */
+@media (min-width: 768px) {
+  .signup-page {
+    flex-direction: row; /* Change to row for larger screens */
+  }
+
+  .left-section {
+    order: 1; /* Restore original order for larger screens */
+  }
+
+  .right-section {
+    order: 2; /* Restore original order for larger screens */
+    padding: 40px; /* Increase padding for larger screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .left-section {
+    display: none;
+  }
+
+  .left-section img {
+    display: none;
+  }
+
+  .signup-page {
+    padding: 20px;
+    background: url('../assets/uni_student.jpg') no-repeat center center;
+  }
+
+  .signup-form {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+  }
 }
 </style>

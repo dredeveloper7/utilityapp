@@ -163,4 +163,41 @@ const login = async () => {
 .login-link a:hover {
   text-decoration: underline;
 }
+
+/* Media Queries for responsiveness */
+@media (min-width: 768px) {
+  .signup-page {
+    flex-direction: row; /* Change to row for larger screens */
+  }
+
+  .left-section {
+    order: 1; /* Restore original order for larger screens */
+  }
+
+  .right-section {
+    order: 2; /* Restore original order for larger screens */
+    padding: 40px; /* Increase padding for larger screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .left-section {
+    display: none;
+  }
+
+  .left-section img {
+    display: none;
+  }
+
+  .login-page {
+    padding: 20px;
+    background: url('../assets/uni_student.jpg') no-repeat center center;
+  }
+
+  .login-form {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+  }
+}
 </style>

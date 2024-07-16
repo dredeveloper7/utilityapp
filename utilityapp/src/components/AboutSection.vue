@@ -1,7 +1,7 @@
 <template>
   <section class="about-section">
     <div class="image-container">
-      <img src="../assets/laptopImageWithDashboard.png" alt="laptopImageWithDashboard" />
+      <img src="../assets/laptopImageWithDashboard.png" alt="laptopImageWithDashboard" class='laptopImage'/>
     </div>
     <div class="text-container">
       <h4>About</h4>
@@ -76,14 +76,61 @@ import SignUpButton from './BigNavigationButton.vue'
   background-color: #5753d3;
 }
 
-/* text (p tages) */
 p {
-    color: rgb(108, 117, 125);
-    position: static;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    margin: 20px 0px 0px;
+  color: rgb(108, 117, 125);
+  position: static;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 20px 0px 0px;
 }
 
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+  }
+
+  .text-container {
+    padding-left: 0;
+    padding-top: 20px;
+    padding: 20px
+  }
+
+  .text-container h4 {
+    font-size: 14px;
+  }
+
+  .text-container h2 {
+    font-size: 24px;
+  }
+
+  .text-container p {
+    font-size: 14px;
+  }
+
+  .read-more-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+  .laptopImage {
+    width: 60%;
+    margin: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-container h2 {
+    font-size: 20px;
+  }
+
+  .text-container p {
+    font-size: 12px;
+  }
+
+  .read-more-btn {
+    font-size: 12px;
+  }
+}
 </style>

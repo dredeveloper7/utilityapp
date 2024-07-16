@@ -53,25 +53,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
-.GridBulletSection {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 80%;
-  max-width: 1200px;
-  margin: 0px auto;
-  padding:60px 0px 30px;
-}
-
-.page-section {
-  width: 80%;
-  max-width: 1200px;
-  margin: 20px auto;
-  padding:20px 0px 30px;
-}
-
-
 body {
   font-family: 'Figtree', sans-serif;
   margin: 0;
@@ -81,8 +62,8 @@ body {
   align-items: center;
   text-align: center;
   width: 100%;
-
 }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -99,7 +80,7 @@ body {
 .header-right {
   display: flex;
   align-items: center;
-  gap: 20px; /* Adjust the gap as needed */
+  gap: 20px;
 }
 
 .main-content {
@@ -109,18 +90,21 @@ body {
   width: 80%;
   max-width: 1200px;
   margin: 20px auto;
-  padding:60px 0px 30px;
+  padding: 60px 0px 30px;
 }
+
 .text-content {
   flex: 1;
   margin-right: 20px;
 }
+
 .main-heading {
   font-family: 'Figtree', sans-serif;
   font-size: 60px;
   font-weight: bold;
   margin: 20px 0;
 }
+
 .subheading {
   line-height: 1.5;
   font-size: 20px;
@@ -130,9 +114,11 @@ body {
   font-style: normal;
   margin: 10px 0;
 }
+
 .cta {
   margin: 20px 0;
 }
+
 .cta button {
   background-color: #000;
   color: #fff;
@@ -143,15 +129,17 @@ body {
   border-radius: 5px;
   transition: background-color 0.3s;
 }
+
 .cta button:hover {
   background-color: #444;
 }
+
 .hero-image {
   overflow: clip;
   position: static;
-  max-width: 100%;
-  margin: 0px 102.172px 0px 102.164px;
-  height: 550px
+  max-width: 50%;
+  margin: 0 20px;
+  height: auto;
 }
 
 .timer {
@@ -160,6 +148,7 @@ body {
   gap: 10px;
   margin: 20px 0;
 }
+
 .timer div {
   background-color: #f0f0f0;
   padding: 10px;
@@ -171,7 +160,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center; /* Center text horizontally */
+  text-align: center;
   padding: 40px 0px 40px 0px;
 }
 
@@ -184,5 +173,80 @@ body {
   margin: 0px 0px 20px;
 }
 
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .header-right {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .main-content {
+    flex-direction: column;
+    width: 90%;
+    padding: 20px 0;
+  }
+
+  .text-content {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .main-heading {
+    font-size: 36px;
+  }
+
+  .subheading {
+    font-size: 16px;
+  }
+
+  .cta button {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .hero-image {
+    margin: 20px 0;
+    height: auto;
+    max-width: 50%;
+  }
+
+  .page-section, .GridBulletSection {
+    width: 100%;
+    padding: 0px 0;
+  }
+
+  .header-right {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 28px;
+  }
+
+  .subheading {
+    font-size: 14px;
+  }
+
+  .cta button {
+    font-size: 16px;
+  }
+
+  .header-right {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
 
 </style>

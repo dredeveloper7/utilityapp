@@ -25,7 +25,7 @@ const signUp = () => {
 const router = useRouter();
 
 const navigateToSignUp = () => {
-  router.push({ name: 'signup' });
+  router.push({ name: 'login' });
 };
 </script>
 

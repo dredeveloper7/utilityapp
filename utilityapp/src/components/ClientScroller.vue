@@ -26,16 +26,17 @@ const scroller = ref(null);
 const track = ref(null);
 
 let animationFrameId;
+let scrollPosition = 0;
 
 const startScrolling = () => {
-  const trackWidth = track.value.scrollWidth;
-  let scrollPosition = 0;
-
   const scroll = () => {
+    const trackWidth = track.value.scrollWidth / 2; // Half width since images are duplicated
+
     scrollPosition += 1; // Adjust the scrolling speed as needed
-    if (scrollPosition >= trackWidth / 2) {
+    if (scrollPosition >= trackWidth) {
       scrollPosition = 0;
     }
+
     track.value.style.transform = `translateX(${-scrollPosition}px)`;
     animationFrameId = requestAnimationFrame(scroll);
   };
@@ -61,15 +62,14 @@ onBeforeUnmount(() => {
 
 .image-track {
   display: flex;
-  width: calc(200%); /* Double the width to accommodate duplicated images */
+  width: 200%; /* Double the width to accommodate duplicated images */
   will-change: transform;
 }
 
 .image-container {
   display: inline-block;
-  width: 300px;
-  margin: 5px;
-  padding: 40px;
+  width: 300px; /* Adjust width based on your image/container size */
+  margin: 40px;
 }
 
 .image-container img {

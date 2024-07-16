@@ -86,19 +86,69 @@ const features = ref([
   margin-bottom: 10px;
 }
 
-
-/* text (p tages) */
 p {
-    color: rgb(108, 117, 125);
-    position: static;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    margin: 20px 0px 0px;
+  color: rgb(108, 117, 125);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 20px 0 0;
 }
 
 .pattern-background {
-  background-color: #f2f2f2; /* Off-white base color */
-  background-size: 40px 40px; /* Adjust the size of the pattern */
+  background-color: #f2f2f2;
+  background-size: 40px 40px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature {
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .feature-content h3 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-heading {
+    font-size: 24px;
+  }
+
+  .feature {
+    max-width: 100%;
+  }
+
+  .feature-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .feature-content h3 {
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 18px;
+  }
 }
 </style>
