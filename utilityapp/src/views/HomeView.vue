@@ -90,7 +90,7 @@ body {
   width: 80%;
   max-width: 1200px;
   margin: 20px auto;
-  padding: 60px 0px 30px;
+  padding: 30px 0px 30px;
 }
 
 .text-content {
