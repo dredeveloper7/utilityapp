@@ -7,7 +7,7 @@
     <div class="right-section">
       <div class="feature">
         <div class="feature-icon">
-          <img src="../assets/icon1.png" alt="Icon 1" />
+          <!-- <img src="../assets/icon1.png" alt="Icon 1" /> -->
         </div>
         <div class="feature-text">
           <h3>Sign Up for Free</h3>
@@ -16,7 +16,7 @@
       </div>
       <div class="feature">
         <div class="feature-icon">
-          <img src="../assets/icon2.png" alt="Icon 2" />
+          <!-- <img src="../assets/icon2.png" alt="Icon 2" /> -->
         </div>
         <div class="feature-text">
           <h3>Choose Your Subjects</h3>
@@ -25,7 +25,7 @@
       </div>
       <div class="feature">
         <div class="feature-icon">
-          <img src="../assets/icon3.png" alt="Icon 3" />
+          <!-- <img src="../assets/icon3.png" alt="Icon 3" /> -->
         </div>
         <div class="feature-text">
           <h3>Pick Your Quiz Style</h3>
@@ -34,7 +34,7 @@
       </div>
       <div class="feature">
         <div class="feature-icon">
-          <img src="../assets/icon4.png" alt="Icon 4" />
+          <!-- <img src="../assets/icon4.png" alt="Icon 4" /> -->
         </div>
         <div class="feature-text">
           <h3>Track Your Progress</h3>

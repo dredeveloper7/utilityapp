@@ -10,14 +10,5 @@ const app = createApp(App);
 const pinia = createPinia();
 app.use(pinia);
 app.use(router);
+app.mount('#app');
 
-const authStore = useAuthStoreWithSetup(); // Use the setup function to initialize the auth store
-
-authStore.setPersistence().then(() => {
-  authStore.checkAuthStatus().then(() => {
-    if (!app._isMounted) {
-      app.mount('#app');
-      app._isMounted = true; // Mark the app as mounted
-    }
-  });
-});
