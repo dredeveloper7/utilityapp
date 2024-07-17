@@ -1,7 +1,7 @@
 <template>
   <div class="landing-page">
     <header class="header">
-      <img src="../assets/logo.png" alt="Logo" width="100" />
+      <!-- <img src="../assets/logo.png" alt="Logo" width="100" /> -->
       <div class="header-right">
         <CountdownComponent />
         <BigNavigationButton text="Register for Giveaway" navigateTo="signup" color="#6c63ff" />
