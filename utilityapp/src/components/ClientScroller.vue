@@ -12,10 +12,10 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 const images = ref([
-  { src: "src/assets/clients/1.png", alt: 'Image 1' },
-  { src: "src/assets/clients/2.png", alt: 'Image 2' },
-  { src: "src/assets/clients/3.png", alt: 'Image 3' },
-  { src: "src/assets/clients/4.png", alt: 'Image 4' },
+  { src: new URL('../assets/clients/1.png', import.meta.url).href, alt: 'Image 1' },
+  { src: new URL('../assets/clients/2.png', import.meta.url).href, alt: 'Image 2' },
+  { src: new URL('../assets/clients/3.png', import.meta.url).href, alt: 'Image 3' },
+  { src: new URL('../assets/clients/4.png', import.meta.url).href, alt: 'Image 4' },
   // Add more images as needed
 ]);
 
