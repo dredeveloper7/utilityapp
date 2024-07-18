@@ -44,7 +44,6 @@ const login = async () => {
     router.push({ name: 'dashboard' }); // Ensure this route name is correct
   } catch (error) {
     console.error('Error logging in:', error);
-    alert(error.message);
   }
 };
 </script>
