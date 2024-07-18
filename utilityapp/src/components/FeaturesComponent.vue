@@ -46,7 +46,7 @@ const features = ref([
 .section-heading {
   font-size: 32px;
   font-weight: bold;
-  margin-bottom: 40px;
+  padding: 20px;
 }
 
 .features {
@@ -107,7 +107,7 @@ p {
   }
 
   .feature {
-    max-width: 80%;
+    max-width: 100%;
     margin-bottom: 20px;
   }
 
@@ -130,6 +130,7 @@ p {
 @media (max-width: 480px) {
   .section-heading {
     font-size: 24px;
+    padding: 20px;
   }
 
   .feature {
@@ -143,7 +144,7 @@ p {
   }
 
   .feature-content h3 {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   p {

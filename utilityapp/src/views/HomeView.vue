@@ -71,6 +71,7 @@ body {
   padding: 20px;
   background-color: #f8f9fa;
   width: 100%;
+  /* margin: 10px */
 }
 
 .logo {
@@ -102,7 +103,7 @@ body {
   font-family: 'Figtree', sans-serif;
   font-size: 60px;
   font-weight: bold;
-  margin: 20px 0;
+  margin: 20px;
 }
 
 .subheading {
@@ -112,7 +113,6 @@ body {
   font-family: "Figtree", sans-serif;
   font-weight: normal;
   font-style: normal;
-  margin: 10px 0;
 }
 
 .cta {
@@ -198,6 +198,7 @@ body {
 
   .main-heading {
     font-size: 36px;
+    margin: 20px
   }
 
   .subheading {
