@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="header">
-      <img src="../assets/logo.png" alt="Logo" width="100" />
+    <!-- <img src="../assets/logo.png" alt="Logo" width="100" /> -->
       <div class="header-right">
         <button @click="toggleMenu" class="burger-menu">
           <span class="burger-bar"></span>
@@ -56,7 +56,7 @@ const signOut = () => {
 <style scoped>
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 20px;
   background-color: #f8f9fa;
