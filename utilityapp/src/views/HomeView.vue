@@ -116,10 +116,21 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh; /* Ensure it takes at least the viewport height */
-  background: url('../assets/Woman on her laptop.png') no-repeat center center/cover;
+  background: url('../assets/students_moving_into_house.png') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.overlay-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(12, 12, 12, 0.7); /* Dark purple tint */
+  z-index: 1;
 }
 
 .text-content {
@@ -129,7 +140,7 @@ body {
   text-align: center;
   max-width: 600px;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
+  /* background: rgba(0, 0, 0, 0.5); */
   border-radius: 10px;
 }
 
@@ -153,6 +164,22 @@ body {
   margin: 20px 0;
 }
 
+.centered-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center;
+  padding: 10px 0; /* Add padding if needed */
+  width: 100%; /* Ensure the container takes the full width */
+}
+
+.centered-heading {
+  font-size: 32px;
+  font-family: 'Figtree', sans-serif;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  margin: 0; /* Remove default margin */
+}
 .cta button {
   background-color: #6c63ff;
   color: #fff;

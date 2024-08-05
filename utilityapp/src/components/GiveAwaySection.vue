@@ -36,8 +36,13 @@ import BigNavigationButton from './BigNavigationButton.vue'
 }
 
 .registration-button {
-  width: auto; /* Make button width adjust to content */
-  padding: 10px 20px; /* Adjust padding for desired button size */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 /* Media Queries for responsiveness */
@@ -46,24 +51,9 @@ import BigNavigationButton from './BigNavigationButton.vue'
     padding: 20px 10px;
   }
 
-  .registration-for-giveaway-section p {
-    font-size: 14px;
-  }
 
-  .registration-button {
-    width: auto; /* Make button width adjust to content */
-    font-size: 14px;
-  }
 }
 
 @media (max-width: 480px) {
-  .registration-for-giveaway-section p {
-    font-size: 12px;
-  }
-
-  .registration-button {
-    width: auto; /* Make button width adjust to content */
-    font-size: 12px;
-  }
 }
 </style>

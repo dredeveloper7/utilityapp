@@ -1,11 +1,11 @@
 <template>
   <section class="key-reminders-section">
     <div class="content-wrapper">
-      <div class="image-content">
-        <img src="../assets/phoneclock.png" alt="Phone with Clock" class="phone-clock-image" />
-      </div>
       <div class="text-content">
-        <h2 class="heading">Never miss a moment with key reminders</h2>
+        <h3 class="heading">Never miss a moment with key reminders</h3>
+        <div class="image-content">
+          <img src="../assets/phoneclock.png" alt="Phone with Clock" class="phone-clock-image" />
+        </div>
         <p class="description">
           Automated messages reminding you of key renewal dates and providing you with the best packages.
         </p>
@@ -39,7 +39,7 @@
 }
 
 .heading {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   color: #000000;;
   margin-bottom: 20px;
@@ -56,7 +56,7 @@
 }
 
 .phone-clock-image {
-  max-width: 100%;
+  max-width: 70%;
   height: auto;
 }
 
