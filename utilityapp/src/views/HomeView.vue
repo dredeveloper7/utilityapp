@@ -88,7 +88,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 5px;
   background-color: #f8f9fa;
   width: 100%;
 }
@@ -273,5 +273,9 @@ body {
   .page-section {
     padding: 30px 5px;
   }
+}
+
+.header{
+  padding: 5px
 }
 </style>
