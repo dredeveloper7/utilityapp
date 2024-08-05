@@ -25,8 +25,9 @@
       </div>
     </section>
     <FeaturesComponent class="page-section" />
-    <ReminderSection/>
+    <ReminderSection />
     <AboutSection class="page-section" />
+    <FaqSection /> <!-- Add the FAQ section here -->
     <section class="client-scroller">
       <div class="centered-container">
         <h1 v-if="!isMobile" class="centered-heading">Our Utility Providers</h1>
@@ -46,7 +47,8 @@ import FeaturesComponent from '../components/FeaturesComponent.vue';
 import AboutSection from '../components/AboutSection.vue';
 import HomeViewBurgerMenu from '../components/HomeViewBurgerMenu.vue';
 import GiveAwaySection from '../components/GiveAwaySection.vue';
-import ReminderSection from '../components/ReminderSection.vue'
+import ReminderSection from '../components/ReminderSection.vue';
+import FaqSection from '../components/FaqSection.vue';
 import '../assets/base.css'; // Add this line to import base.css
 
 const isMobile = ref(false);
@@ -68,6 +70,7 @@ const signUp = () => {
   alert('Sign Up Clicked!');
 };
 </script>
+
 <style scoped>
 body {
   font-family: 'Figtree', sans-serif;
