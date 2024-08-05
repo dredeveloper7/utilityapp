@@ -229,7 +229,7 @@ body {
   }
 
   .overlay-container {
-    min-height: 80vh; /* Adjust height for smaller screens */
+    min-height: 70vh; /* Adjust height for smaller screens */
   }
 
   .text-content {
