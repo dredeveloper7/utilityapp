@@ -19,7 +19,7 @@
             the best prices and a single platform to manage them all
           </p>
           <div class="cta">
-            <BigNavigationButton text="Sign Up" color="#6c63ff" />
+            <BigNavigationButton class="signUp" text="Sign Up" color="#6c63ff" />
           </div>
         </div>
       </div>
@@ -180,6 +180,7 @@ body {
   justify-content: center;
 }
 
+
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
   .header-left {
@@ -217,7 +218,7 @@ body {
   }
 
   .cta button {
-    width: 100%;
+    width: 8em;
     padding: 10px 0;
   }
 

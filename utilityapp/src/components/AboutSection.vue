@@ -57,7 +57,7 @@ import SignUpButton from './BigNavigationButton.vue'
 }
 
 .text-container p {
-  font-size: px;
+  font-size: 16px;
   color: #666;
   margin-bottom: 20px;
 }
@@ -123,7 +123,7 @@ p {
   }
 
   .text-container p {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .read-more-btn {
