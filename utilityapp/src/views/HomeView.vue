@@ -146,7 +146,7 @@ body {
 
 .main-heading {
   font-family: 'Figtree', sans-serif;
-  font-size: 60px;
+  font-size: 70px;
   font-weight: bold;
   margin: 20px;
 }
@@ -226,7 +226,7 @@ body {
   }
 
   .overlay-container {
-    min-height: 50vh; /* Adjust height for smaller screens */
+    min-height: 90vh; /* Adjust height for smaller screens */
   }
 
   .text-content {
@@ -236,7 +236,7 @@ body {
   }
 
   .main-heading {
-    font-size: 36px;
+    font-size: 40px;
     margin: 20px;
   }
 
@@ -256,11 +256,11 @@ body {
 
 @media (max-width: 480px) {
   .main-heading {
-    font-size: 28px;
+    font-size: 50px;
   }
 
   .subheading {
-    font-size: 14px;
+    font-size: 20px;
   }
 
   .cta button {
