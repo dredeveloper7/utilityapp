@@ -276,6 +276,6 @@ body {
 }
 
 .header{
-  padding: 5px
+  padding: 5px 20px 0px 20px
 }
 </style>
