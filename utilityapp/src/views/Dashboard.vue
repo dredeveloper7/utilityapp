@@ -12,6 +12,7 @@
           <ul>
             <li><router-link to="/">Home</router-link></li>
             <li><router-link to="/dashboard">Dashboard</router-link></li>
+            <li><router-link to="">My Details</router-link></li>
             <li><button @click="signOut" class="sign-out-button">Sign Out</button></li>
           </ul>
         </nav>
@@ -32,6 +33,9 @@
 <script setup>
 import { ref } from 'vue';
 import { useAuthStore } from '../stores/auth';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const authStore = useAuthStore();
 const isMenuOpen = ref(false);
@@ -49,7 +53,8 @@ const toggleMenu = () => {
 };
 
 const signOut = () => {
-  authStore.clearUser();
+  authStore.signOut();
+  router.push({ name: 'login' }); // Ensure this route name is correct
 };
 </script>
 

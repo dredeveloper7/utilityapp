@@ -21,6 +21,7 @@ export const useAuthStore = defineStore('auth', {
     clearUser() {
       this.user = null;
       this.isAuthenticated = false;
+      console.log("Signed out")
     },
     async checkAuthStatus() {
       const user = auth.currentUser;

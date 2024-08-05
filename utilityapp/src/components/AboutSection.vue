@@ -1,11 +1,11 @@
 <template>
   <section class="about-section">
-    <div class="image-container">
+    <!-- <div class="image-container">
       <img src="../assets/laptopImageWithDashboard.png" alt="laptopImageWithDashboard" class='laptopImage'/>
-    </div>
+    </div> -->
     <div class="text-container">
-      <h4>About</h4>
-      <h2>We provide a variety of services as part of our business model.</h2>
+      <h2>About</h2>
+      <h3>We provide a variety of services as part of our business model.</h3>
       <p>
         At [Company Name], we simplify the process of managing your utility services while providing exceptional benefits to our members. Our platform allows you to sign up effortlessly, granting you access to exclusive discounted rates from our trusted utility provider partners. By joining us, you'll not only enjoy significant savings on your essential services but also stay informed about any changes to your contracts and discover better deals as they become available. As a token of our appreciation, all members are automatically entered into our seasonal free prize draws, offering you exciting opportunities to win fantastic rewards. Experience convenience and savings with [Company Name], where we prioritize your needs and keep you updated with the best offers in the market.
       </p>
@@ -53,10 +53,11 @@ import SignUpButton from './BigNavigationButton.vue'
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #6c63ff
 }
 
 .text-container p {
-  font-size: 16px;
+  font-size: px;
   color: #666;
   margin-bottom: 20px;
 }
@@ -103,10 +104,6 @@ p {
 
   .text-container h2 {
     font-size: 24px;
-  }
-
-  .text-container p {
-    font-size: 14px;
   }
 
   .read-more-btn {

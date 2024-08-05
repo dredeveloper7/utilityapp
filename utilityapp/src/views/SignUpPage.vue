@@ -34,9 +34,12 @@ import { auth } from '../firebaseConfig';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
+import { useToast } from 'vue-toastification';
+
 
 const router = useRouter();
 const authStore = useAuthStore();
+const toast = useToast();
 
 const username = ref('');
 const email = ref('');
@@ -51,6 +54,8 @@ const signUp = async () => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email.value, password.value);
     console.log("User signed up:", userCredential.user);
+    router.push({ name: 'dashboard' });
+    toast.success("Welcome to UtilityApp!");
   } catch (error) {
     console.error("Error signing up:", error);
     alert(error)
