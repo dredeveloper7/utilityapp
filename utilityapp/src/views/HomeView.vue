@@ -225,7 +225,7 @@ body {
   .main-content {
     flex-direction: column;
     width: 100%;
-    padding: 8px
+    padding: 12px
   }
 
   .overlay-container {
