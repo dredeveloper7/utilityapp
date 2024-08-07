@@ -1,9 +1,9 @@
 <template>
   <div class="landing-page">
     <header class="header">
-      <div class="header-left">
+      <!-- <div class="header-left">
         <HomeViewBurgerMenu v-if="isMobile" />
-      </div>
+      </div> -->
       <div class="header-right">
         <CountdownComponent v-if="!isMobile" />
         <BigNavigationButton v-if="!isMobile" text="Register for Giveaway" navigateTo="signup" color="#6c63ff" />
@@ -13,20 +13,27 @@
     <section class="main-content">
       <div class="overlay-container">
         <div class="text-content">
-          <h1 class="main-heading">Your Home Bills, Simplified!</h1>
           <p class="subheading">
-            The free app for students that simplifies your home bills by providing
-            the best prices and a single platform to manage them all
+            Easy Home management
           </p>
+          <h1 class="main-heading">Manage your home with Gafs</h1>
           <div class="cta">
             <BigNavigationButton class="signUp" text="Sign Up" color="#6c63ff" />
           </div>
         </div>
       </div>
     </section>
-    <FeaturesComponent class="page-section" />
+    <section class="centered-text-section">
+      <div class="centered-text-content">
+        <p>
+          Find the best utility packages for your home and get helpful
+          reminders ahead of key expiry dates with your free digital home.
+        </p>
+      </div>
+    </section>
+
     <ReminderSection />
-    <AboutSection class="page-section" />
+    <!-- <AboutSection class="page-section" /> -->
     <FaqSection /> <!-- Add the FAQ section here -->
     <section class="client-scroller">
       <div class="centered-container">
@@ -57,19 +64,31 @@ const handleResize = () => {
   isMobile.value = window.innerWidth <= 768;
 };
 
+const handleScroll = () => {
+  const header = document.querySelector('.header');
+  if (window.scrollY > 50) {
+    header.style.backgroundColor = 'rgba(248, 249, 250, 0.95)'; // Less translucent
+  } else {
+    header.style.backgroundColor = 'rgba(248, 249, 250, 0.8)'; // More translucent
+  }
+};
+
 onMounted(() => {
   window.addEventListener('resize', handleResize);
+  window.addEventListener('scroll', handleScroll); // Add scroll event listener
   handleResize();
 });
 
 onUnmounted(() => {
   window.removeEventListener('resize', handleResize);
+  window.removeEventListener('scroll', handleScroll); // Clean up scroll event listener
 });
 
 const signUp = () => {
   alert('Sign Up Clicked!');
 };
 </script>
+
 
 <style scoped>
 body {
@@ -88,9 +107,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
-  background-color: #f8f9fa;
+  padding: 5px 20px 0px 20px;
+  background-color: rgba(248, 249, 250, 0.8); /* Initially translucent */
+  position: sticky;
+  top: 0;
   width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
 }
 
 .header-left {
@@ -211,6 +234,40 @@ body {
 }
 
 
+.HeaderLoginButton{
+  margin-bottom: 6px;
+}
+
+.centered-text-section {
+  position: relative;
+  width: 100%;
+  min-height: 70vh; /* Ensure it takes at least the viewport height */
+  background: url('../assets/poweremojies_.png') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered-text-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.centered-text-content {
+  position: absolute;
+  z-index: 2;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 24px;
+}
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
   .header-left {
