@@ -146,6 +146,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 20px; /* Adjust the value to get the desired curvature */
 }
 
 .overlay-container::before {
@@ -157,6 +158,7 @@ body {
   height: 100%;
   background-color: rgba(12, 12, 12, 0.7); /* Dark purple tint */
   z-index: 1;
+  border-radius: 20px; /* Adjust the value to get the desired curvature */
 }
 
 .text-content {
@@ -195,7 +197,7 @@ body {
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   text-align: center;
-  padding: 10px 0; /* Add padding if needed */
+  padding: 15px 0; /* Add padding if needed */
   width: 100%; /* Ensure the container takes the full width */
 }
 
@@ -242,7 +244,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 70vh; /* Ensure it takes at least the viewport height */
-  background: url('../assets/poweremojies_.png') no-repeat center center/cover;
+  background: url('../assets/emojiAssetSmall.png') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -282,7 +284,7 @@ body {
   .main-content {
     flex-direction: column;
     width: 100%;
-    padding: 12px
+    padding: 11px 22px 22px 22px
   }
 
   .overlay-container {
