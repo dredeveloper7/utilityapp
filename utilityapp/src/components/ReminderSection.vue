@@ -4,7 +4,7 @@
       <div class="text-content">
         <h3 class="heading">Never miss a moment with key reminders</h3>
         <div class="image-content">
-          <img src="../assets/phoneclock.png" alt="Phone with Clock" class="phone-clock-image" />
+          <img src="../assets/iphoneMessageImage.png" alt="Phone with Clock" class="phone-clock-image" />
         </div>
         <p class="description">
           Automated messages reminding you of key renewal dates and providing you with the best packages.
@@ -56,8 +56,7 @@
 }
 
 .phone-clock-image {
-  max-width: 70%;
-  height: auto;
+  max-width: 99.9999%;
 }
 
 /* Media Queries for responsiveness */
@@ -76,8 +75,5 @@
     margin-top: 0;
   }
 
-  .phone-clock-image {
-    max-width: 300px;
-  }
 }
 </style>

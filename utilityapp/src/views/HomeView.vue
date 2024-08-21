@@ -165,8 +165,7 @@ body {
   position: absolute;
   z-index: 2;
   color: white;
-  text-align: center;
-  max-width: 600px;
+  max-width: 500px;
   padding: 20px;
   /* background: rgba(0, 0, 0, 0.5); */
   border-radius: 10px;
@@ -174,9 +173,9 @@ body {
 
 .main-heading {
   font-family: 'Figtree', sans-serif;
-  font-size: 70px;
-  font-weight: bold;
-  margin: 20px;
+  font-size: 50px;
+  font-weight: normal;
+
 }
 
 .subheading {
@@ -184,8 +183,8 @@ body {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.9);
   font-family: 'Figtree', sans-serif;
-  font-weight: normal;
   font-style: normal;
+  font-weight: bold;
 }
 
 .cta {
@@ -298,8 +297,7 @@ body {
   }
 
   .main-heading {
-    font-size: 40px;
-    margin: 20px;
+    font-size: 30px;
   }
 
   .subheading {
@@ -318,7 +316,7 @@ body {
 
 @media (max-width: 480px) {
   .main-heading {
-    font-size: 50px;
+    font-size: 35px;
   }
 
   .subheading {
