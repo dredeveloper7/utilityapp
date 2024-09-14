@@ -21,7 +21,7 @@
           <div class="cta">
             <BigNavigationButton class="signUp" text="Sign Up" color="#6c63ff" />
           </div>
-          <h1 class="main-heading">Manage your home with Gafs</h1>
+          <h1 class="main-heading">Manage your home with Manij</h1>
           <p class="subheading">Easy Home management</p>
         </div>
       </div>
