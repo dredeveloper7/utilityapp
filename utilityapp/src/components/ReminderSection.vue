@@ -3,12 +3,13 @@
     <div class="content-wrapper">
       <div class="text-content">
         <h3 class="heading">Never miss a moment with key reminders</h3>
+        <p class="description">
+          Automated messages reminding you of key renewal dates and
+          providing you with the best packages.
+        </p>
         <div class="image-content">
           <img src="../assets/iphoneMessageImage.png" alt="Phone with Clock" class="phone-clock-image" />
         </div>
-        <p class="description">
-          Automated messages reminding you of key renewal dates and providing you with the best packages.
-        </p>
       </div>
     </div>
   </section>
@@ -47,8 +48,8 @@
 
 .description {
   font-size: 18px;
-  line-height: 1.5;
-  color: #666;
+  color: #000000;
+  text-align: left;
 }
 
 .image-content {

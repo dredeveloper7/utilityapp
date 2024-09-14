@@ -1,9 +1,10 @@
 <template>
   <div class="landing-page">
     <header class="header">
-      <!-- <div class="header-left">
-        <HomeViewBurgerMenu v-if="isMobile" />
-      </div> -->
+      <div class="header-left">
+        <img src="../assets/manij_logo.png" alt="Manij Logo" class="logo" />
+        <!-- <HomeViewBurgerMenu v-if="isMobile" /> -->
+      </div>
       <div class="header-right">
         <CountdownComponent v-if="!isMobile" />
         <BigNavigationButton v-if="!isMobile" text="Register for Giveaway" navigateTo="signup" color="#6c63ff" />
@@ -12,36 +13,47 @@
     </header>
     <section class="main-content">
       <div class="overlay-container">
+        <!-- Add video background -->
+        <video autoplay muted loop playsinline class="background-video">
+          <source src="../assets/woman_eating_sandwich.mp4" type="video/mp4" />
+        </video>
         <div class="text-content">
-          <p class="subheading">
-            Easy Home management
-          </p>
-          <h1 class="main-heading">Manage your home with Gafs</h1>
           <div class="cta">
             <BigNavigationButton class="signUp" text="Sign Up" color="#6c63ff" />
           </div>
+          <h1 class="main-heading">Manage your home with Gafs</h1>
+          <p class="subheading">Easy Home management</p>
         </div>
       </div>
     </section>
-    <section class="centered-text-section">
+
+    <!-- Updated Section for Correct Alignment -->
+    <section class="findTheBestUtilityPackages">
+      <img class="topHalfEmoji" src="../assets/topHalfEmoji.png" alt="Top Half Emoji">
       <div class="centered-text-content">
         <p>
-          Find the best utility packages for your home and get helpful
-          reminders ahead of key expiry dates with your free digital home.
+          Find the best utility packages for your home and get 
+          helpful reminders ahead of key expiry dates with your free digital home.
         </p>
       </div>
+      <img class="bottomHalfEmoji" src="../assets/bottomHalfEmoji.png" alt="Bottom Half Emoji">
     </section>
 
     <ReminderSection />
     <!-- <AboutSection class="page-section" /> -->
-    <FaqSection /> <!-- Add the FAQ section here -->
-    <section class="client-scroller">
+    <FaqSection />
+    <!-- <section class="client-scroller">
       <div class="centered-container">
         <h1 v-if="!isMobile" class="centered-heading">Our Utility Providers</h1>
       </div>
       <ClientScroller v-if="!isMobile" />
-    </section>
+    </section> -->
     <GiveAwaySection />
+    <footer class="footer">
+      <p>
+        <a href="/terms-and-conditions" class="footer-link">Terms and Conditions</a>
+      </p>
+    </footer>
   </div>
 </template>
 
@@ -56,7 +68,7 @@ import HomeViewBurgerMenu from '../components/HomeViewBurgerMenu.vue';
 import GiveAwaySection from '../components/GiveAwaySection.vue';
 import ReminderSection from '../components/ReminderSection.vue';
 import FaqSection from '../components/FaqSection.vue';
-import '../assets/base.css'; // Add this line to import base.css
+import '../assets/base.css'; // Import base.css for styling
 
 const isMobile = ref(false);
 
@@ -88,7 +100,6 @@ const signUp = () => {
   alert('Sign Up Clicked!');
 };
 </script>
-
 
 <style scoped>
 body {
@@ -128,6 +139,12 @@ body {
   margin-left: auto;
 }
 
+.logo {
+  height: 40px; /* Adjust the height as needed */
+  width: auto;
+  cursor: pointer; /* Optional: Change the cursor to pointer */
+}
+
 .main-content {
   display: flex;
   align-items: center;
@@ -141,41 +158,74 @@ body {
 .overlay-container {
   position: relative;
   width: 100%;
-  min-height: 100vh; /* Ensure it takes at least the viewport height */
-  background: url('../assets/students_moving_into_house.png') no-repeat center center/cover;
+  min-height: 80vh; /* Ensure it takes at least the viewport height */
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* Align items to the bottom */
   justify-content: center;
   border-radius: 20px; /* Adjust the value to get the desired curvature */
 }
 
-.overlay-container::before {
-  content: "";
+.background-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(12, 12, 12, 0.7); /* Dark purple tint */
-  z-index: 1;
+  object-fit: cover;
+  z-index: 0;
   border-radius: 20px; /* Adjust the value to get the desired curvature */
 }
 
 .text-content {
-  position: absolute;
+  position: relative;
   z-index: 2;
   color: white;
   max-width: 500px;
   padding: 20px;
-  /* background: rgba(0, 0, 0, 0.5); */
+  text-align: left; /* Align text to the left */
+  margin-bottom: 20px; /* Margin from the bottom */
+  background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background for better readability */
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+}
+
+.findTheBestUtilityPackages {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #ffffff; /* Match background color for consistency */
+  box-sizing: border-box; /* Ensure padding is included in width calculations */
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.centered-text-content {
+  max-width: 800px;
+  margin: 20px 0;
+  text-align: center;
   border-radius: 10px;
+  position: relative;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-family: 'Figtree', sans-serif;
+}
+
+.topHalfEmoji,
+.bottomHalfEmoji {
+  max-width: 300px; /* Adjust size as needed */
+  margin: 0px; /* Adds spacing around the images */
+  display: block; /* Ensures images are centered within the flex container */
 }
 
 .main-heading {
   font-family: 'Figtree', sans-serif;
   font-size: 50px;
   font-weight: normal;
-
 }
 
 .subheading {
@@ -207,6 +257,7 @@ body {
   color: rgb(0, 0, 0);
   margin: 0; /* Remove default margin */
 }
+
 .cta button {
   background-color: #6c63ff;
   color: #fff;
@@ -234,41 +285,37 @@ body {
   justify-content: center;
 }
 
-
-.HeaderLoginButton{
+.HeaderLoginButton {
   margin-bottom: 6px;
 }
 
-.centered-text-section {
-  position: relative;
+.footer {
   width: 100%;
-  min-height: 70vh; /* Ensure it takes at least the viewport height */
-  background: url('../assets/emojiAssetSmall.png') no-repeat center center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 20px 0; /* Add padding for spacing */
+  background-color: #f8f9fa; /* Light background color for the footer */
+  text-align: center; /* Center-align text */
+  border-top: 1px solid #ddd; /* Optional: Add a top border for separation */
 }
 
-.centered-text-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+.footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #333; /* Darker color for text */
+  font-family: 'Figtree', sans-serif; /* Match the font to the rest of the page */
 }
 
-.centered-text-content {
-  position: absolute;
-  z-index: 2;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  max-width: 800px;
-  padding: 20px;
-  border-radius: 10px;
-  font-size: 24px;
+.footer-link {
+  color: #6c63ff; /* Use a consistent color for the link */
+  text-decoration: none; /* Remove underline from the link */
+  font-weight: bold;
 }
+
+.footer-link:hover {
+  text-decoration: underline; /* Underline on hover for accessibility */
+  color: #5751d9; /* Darker shade on hover */
+}
+
+
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
   .header-left {
@@ -283,30 +330,41 @@ body {
   .main-content {
     flex-direction: column;
     width: 100%;
-    padding: 11px 22px 22px 22px
+    padding: 11px 22px 22px 22px;
   }
 
   .overlay-container {
-    min-height: 70vh; /* Adjust height for smaller screens */
+    min-height: 85vh; /* Adjust height for smaller screens */
   }
 
   .text-content {
     margin-right: 0;
-    margin-bottom: 20px;
-    padding: 10px;
+    margin-bottom: 70px;
+    padding: 20px;
   }
 
   .main-heading {
-    font-size: 30px;
+    font-size: 40px;
+    padding: 5px 0px 10px 0px;
   }
 
   .subheading {
-    font-size: 16px;
+    font-size: 20px;
+    padding: 5px 0px 10px 0px;
   }
 
   .cta button {
     width: 8em;
     padding: 10px 0;
+  }
+
+  .findTheBestUtilityPackages {
+    padding: 20px 10px; /* Adjust padding for smaller screens */
+  }
+
+  .centered-text-content {
+    padding: 15px;
+    font-size: 18px;
   }
 
   .page-section {
@@ -332,7 +390,7 @@ body {
   }
 }
 
-.header{
-  padding: 5px 20px 0px 20px
+.header {
+  padding: 5px 20px 0px 20px;
 }
 </style>

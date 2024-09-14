@@ -1,14 +1,14 @@
 <template>
   <section class="registration-for-giveaway-section">
+    <p class="registration-text">Complete your profile by December 16th to win £100 Amazon vouchers</p>
     <CountdownComponent class="custom-countdown" />
-    <p>Register to enter giveaway</p>
     <BigNavigationButton class="registration-button" text="Register" navigateTo="signup" color="#6c63ff" />
   </section>
 </template>
 
 <script setup>
-import CountdownComponent from './CountdownComponent.vue'
-import BigNavigationButton from './BigNavigationButton.vue'
+import CountdownComponent from './CountdownComponent.vue';
+import BigNavigationButton from './BigNavigationButton.vue';
 </script>
 
 <style scoped>
@@ -23,12 +23,14 @@ import BigNavigationButton from './BigNavigationButton.vue'
   color: #fff; /* Set text color to white for better contrast */
 }
 
-.registration-for-giveaway-section p {
+.registration-text {
   color: #fff; /* Set text color to white */
-  font-size: 16px;
+  font-family: 'Figtree', sans-serif; /* Use the same font as the rest of the codebase */
+  font-size: 20px; /* Increase font size for better readability */
   font-weight: 400;
   line-height: 24px;
   margin: 0;
+  text-align: center; /* Center the text */
 }
 
 .custom-countdown {
@@ -50,10 +52,11 @@ import BigNavigationButton from './BigNavigationButton.vue'
   .registration-for-giveaway-section {
     padding: 20px 10px;
   }
-
-
 }
 
 @media (max-width: 480px) {
+  .registration-text {
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
 }
 </style>
